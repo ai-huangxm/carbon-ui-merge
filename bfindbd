@@ -7,5 +7,5 @@ rm -f $result_file_name
 
 while read line
 do
-  find $jar_unzip_path -name "component.xml"|xargs -I {} grep -lr "${jar_unzip_path}" {} >> $result_file_name
+  find $jar_unzip_path -name "component.xml"|xargs -I {} grep -lr "${line}" {} >> $result_file_name
 done < $urls_file_name
