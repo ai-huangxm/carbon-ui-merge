@@ -14,4 +14,3 @@ do
   cp ${product_plugins_path}/*.jar $object_path
   
 done < $file_name
-
