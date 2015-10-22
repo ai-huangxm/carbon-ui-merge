@@ -1,0 +1,11 @@
+#!/bin/bash
+jar_unzip_path=$1
+urls_file_name=$2
+result_file_name=$3
+
+rm -f $result_file_name
+
+while read line
+do
+  find $jar_unzip_path -name "component.xml"|xargs -I {} grep -lr "${jar_unzip_path}" {} >> $result_file_name
+done < $urls_file_name
