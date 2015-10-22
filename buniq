@@ -1,0 +1,4 @@
+file_name=$1
+sort $file_name|uniq > ${file_name}.tmp
+mv ${file_name}.tmp $file_name
+
