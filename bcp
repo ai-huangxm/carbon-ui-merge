@@ -1,4 +1,17 @@
-FILENAME=$1
-While read LINE do
-  echo $LINE
-done < $FILENAME
+#!/bin/bash
+file_name=$1
+while read line
+do
+  product_path=`echo $line|awk -F '[,;]' '{print $1}'`
+  object_path=`echo $line|awk -F '[,;]' '{print $2}'`
+  
+  product_plugins_path=${product_path}/repository/components/plugins
+  
+  if [ ! -d "$object_path" ]; then 
+    mkdir -p "$object_path" 
+  fi
+  
+  cp ${product_plugins_path}/*.jar $object_path
+  
+done < $file_name
+
