@@ -7,8 +7,8 @@ do
   
   product_plugins_path=${product_path}/repository/components/plugins
   
-  if [ ! -d "$object_path" ]; then 
-    mkdir -p "$object_path" 
+  if [ ! -d "$object_path" ]; then
+    mkdir -p "$object_path"
   fi
   
   cp ${product_plugins_path}/*.jar $object_path

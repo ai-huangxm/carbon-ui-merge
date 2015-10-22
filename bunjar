@@ -1,0 +1,24 @@
+#!/bin/bash
+current_path=`pwd`
+file_name=$1
+while read line
+do
+  source_path=`echo $line|awk -F '[,;]' '{print $1}'`
+  object_path=`echo $line|awk -F '[,;]' '{print $2}'`
+  
+  if [ ! -d "$source_path" ]; then
+    echo "the source path: ${source_path} does not exist!"
+	break;
+  fi
+  
+  if [ ! -d "$object_path" ]; then
+    mkdir -p "$object_path"
+  fi
+  
+  cd $source_path
+  ls|grep ".jar"|xargs -I {} mkdir $object_path/{}
+  ls|grep ".jar"|xargs -I {} unzip {} -d $object_path/{}
+  
+done < $file_name
+
+cd $current_path
