@@ -1,0 +1,11 @@
+entitlement/index.jsp
+entitlement/policy-publish.jsp
+entitlement/my-pdp.jsp
+entitlement/pdp-manage.jsp
+entitlement/advance-search.jsp
+identity-mgt/email-template-config.jsp
+roles-mgt/server-roles-mgt.jsp
+servicestore/index.jsp
+tools-saml/saml_request_validate.jsp
+tools-saml/saml_response_builder.jsp
+entitlement/create-evaluation-request.jsp
