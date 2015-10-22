@@ -1,0 +1,4 @@
+FILENAME=$1
+While read LINE do
+  echo $LINE
+done < $FILENAME
