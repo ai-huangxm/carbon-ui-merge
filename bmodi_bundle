@@ -1,0 +1,7 @@
+curr_path=`pwd`
+cd $1
+cd META-INF
+cat MANIFEST.MF|grep -v "Bundle-Activator"|grep -v "Service-Component" > tmp
+mv tmp MANIFEST.MF
+rm -f services.xml
+cd $curr_path

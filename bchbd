@@ -1,0 +1,4 @@
+#!/bin/bash
+jar_unzip_path=$1
+cd $jar_unzip_path
+ls|grep ".jar"|xargs -I {} bmodi_bundle {}

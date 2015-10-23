@@ -1,0 +1,10 @@
+current_path=`pwd`
+object_path=$2
+
+if [ ! -d "$object_path" ]; then
+  mkdir -p "$object_path"
+fi
+
+cd $1
+zip -r ${object_path}/$1 .
+cd $current_path
